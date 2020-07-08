@@ -1,0 +1,49 @@
+customize hardware들어가서 sound, print, usb를 remove 
+
+New CD/DVD (SATA) 에서 Use ISO image file: 에서ubuntu-20.04-live server 넣기
+
+Power on this virual machine 클릭
+
+su는 super user
+sudo는 super user do
+passwd는 password
+
+수정하기위해서 들어가는 명령어
+sudo vi /etc/ssh/sshd_config
+수정은 15번째 줄인 #port22 앞의 #삭제,  34번째 줄을 permitrootlogin no로 변경
+ 
+
+swap은 램이 부족시에 사용되는 공간(페이지 75 참고)
+
+update설정안했을때
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install ubuntu-desktop
+
+update설정했을때
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install --no-install-recommends ubuntu-desktop
+startx
+
+
+continue? 에서 y 입력
+#ubuntu GUI를 받는다
+startx # ubuntu gui를 실행한다. 
+
+https://epicarts.tistory.com/28?category=816044 
+
+ip 확인가능하게
+sudo apt-get install net-tools --> ifconfig가 가능.
+
+
+데비안파일 설치방법(설치한 파일 위치의 터미널에가서)파일(visual studio code) 설치하는 명령어
+sudo dpkg -i code*.deb
+
+아파치설치법(네트워크를 연결해주는 서버)
+sudo apt-get install apache2
+
+
+
+
+
