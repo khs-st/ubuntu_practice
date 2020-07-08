@@ -1,0 +1,19 @@
+상태:	디렉터리 목록 조회...
+상태:	Listing directory /home/kobalja
+상태:	"/home/kobalja" 디렉터리 목록 조회 성공
+상태:	"/home" 디렉터리 목록 조회...
+상태:	Listing directory /home
+상태:	"/home" 디렉터리 목록 조회 성공
+상태:	"/home/kobalja" 디렉터리 목록 조회...
+상태:	"/home/kobalja" 디렉터리 목록 조회 성공
+상태:	"/home/kobalja/바탕화면" 디렉터리 목록 조회...
+상태:	Listing directory /home/kobalja/바탕화면
+상태:	"/home/kobalja/바탕화면" 디렉터리 목록 조회 성공
+상태:	192.168.220.131에 연결...
+상태:	Using username "kobalja". 
+상태:	Connected to 192.168.220.131
+상태:	D:\KHS\ubuntu_practice\우분투\1.png 업로드 시작
+상태:	파일 전송 성공, 105,600 바이트를 1 초에 전송
+상태:	"/home/kobalja/바탕화면" 디렉터리 목록 조회...
+상태:	Listing directory /home/kobalja/바탕화면
+상태:	"/home/kobalja/바탕화면" 디렉터리 목록 조회 성공

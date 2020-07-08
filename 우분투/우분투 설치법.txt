@@ -35,7 +35,12 @@ https://epicarts.tistory.com/28?category=816044
 
 ip 확인가능하게
 sudo apt-get install net-tools --> ifconfig가 가능.
+이다음은 putty 확인 (connection 가서 60수정)
 
+ssh파일 설치
+sudo apt-get install ssh
+sudo apt-get install openssh-server
+sudo vi /etc/ssh/sshd_config
 
 데비안파일 설치방법(설치한 파일 위치의 터미널에가서)파일(visual studio code) 설치하는 명령어
 sudo dpkg -i code*.deb
@@ -43,7 +48,56 @@ sudo dpkg -i code*.deb
 아파치설치법(네트워크를 연결해주는 서버)
 sudo apt-get install apache2
 
+아파치 버전 확인
+apache2 -v
+
+아파치파일들어가서 수정해야함 
+들어가는거 sudo vi /etc/apache2/sites-available/000-default.conf
+수정은 9번째 줄의 severname 의 앞에 #삭제, 그 뒤 글을 ip주소로 변경
+수정 후 sudo service apache2 restart
+
+비쥬얼 스튜디오 코드로 만든 페이지를 ip주소로 인터넷에 뜨게 하려면 다운로드한 파일의 폴더에 가서 터미널열고
+sudo mv index.html /var/www/html 그러면 수정한 vs코드파일이 열린다.
+
+혹시나 수정이 안됬다면 다시 sudo service apache2 restart로 재시작 후 확인하기
+
+파일 확인을 위해 cd /var/www/html 로 해당 폴더 들어간 후 ls로 파일 확인 가능, sudo vi index.html 로 파일 수정 가능.
+
+/var/www/html 안에 파일이 두개 있을 경우 뜨게 하는 html파일 바꾸려면 먼저 
+sudo vi /etc/apache2/mods-enabled/dir.conf
+
+
+파일질라 설치
+sudo apt-get install vsftpd
+sudo vim /etc/vsftpd.conf 들어가서 31번째 줄, 70번째 줄 #제거 후 :wq 로 나가기
+sudo apt-get install filezilla
+우분투에 설치 후 윈도우로 가서 filezilla client 다운
+둘다 filezilla 실행시키기
+
+
+/var/www/html 폴더에 파일질라로 파일 전송하는법(소유자와 사용자그룹이 root라서 원래 안됨)
+ls -l /var/
+sudo chown -R koblaja /var/www   소유자 이름을 사용자명으로 변경
+sudo chgrp -R kobalja /var/www    사용자그룹 이름을 사용자그룹명으로 변경.	
+sudo service vsftpd restart
+여기까지 하고 파일 전송하면 전송된다.
 
 
 
+mysql 설치
+sudo apt-get install mysql-server
+sudo ufw allow mysql
+sudo systemctl start mysql
+sudo systemctl enable mysql
+mysql 실행:  sudo /usr/bin/mysql -u root -p
 
+
+mysql 확인
+show databases;
+create database database이름
+show databases; 로 생성확인
+use database이름 으로 그 데이터베이스 사용하기
+테이블 생성: create table student(name varchar(50) not null,number int(50) not null, primary key(number));
+show tables로 생성된테이블 확인
+insert into student values("고한솔",5237278); 로 student 테이블 안의 속성 조회
+select * from student; 로 테이블 데이터 내용 확인
