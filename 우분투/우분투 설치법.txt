@@ -8,6 +8,8 @@ su는 super user
 sudo는 super user do
 passwd는 password
 
+su root 들어가기 위해 비밀번호 설정하는법 sudo passwd root
+
 수정하기위해서 들어가는 명령어
 sudo vi /etc/ssh/sshd_config
 수정은 15번째 줄인 #port22 앞의 #삭제,  34번째 줄을 permitrootlogin no로 변경
@@ -41,6 +43,7 @@ ssh파일 설치
 sudo apt-get install ssh
 sudo apt-get install openssh-server
 sudo vi /etc/ssh/sshd_config
+수정은 15번째 줄인 #port22 앞의 #삭제,  34번째 줄을 permitrootlogin no로 변경
 
 데비안파일 설치방법(설치한 파일 위치의 터미널에가서)파일(visual studio code) 설치하는 명령어
 sudo dpkg -i code*.deb
@@ -85,6 +88,7 @@ sudo service vsftpd restart
 
 
 mysql 설치
+sudo apt-get update
 sudo apt-get install mysql-server
 sudo ufw allow mysql
 sudo systemctl start mysql
